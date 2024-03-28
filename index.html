@@ -1,52 +1,132 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hello</title>
-        <link rel="stylesheet" href="Style.css">
 
-    </head>
+<head>
+    <title>HTML5 Basic</title>
 
-    <body>
-        <!--header-->
-        <header>
-            <div id="header-container">
-                <span>
-                    <label for="search">Example</label>
-                </span>
-                <span>
-                    <input id="search" type="text" name="search">
-                </span>
-            </div>
-        </header>
+    <script>
+        alert('Hello JavaScript...!');
+     </script>
 
-        <!--navigator-->
-        <nav>
-            <div id="nav-container">
-                <span id="navigator"><a href="#top">Home</a></span>
-                <span id="navigator">Link1</span>
-                <span id="navigator">Link2</span>
-                <span id="navigator">Link3</span>
-                <span id="navigator">Link4</span>
-            </div>
-        </nav>
+    <style>
+        body > h1:hover {
+            color : red;
+        }
+        body > h1:active {
+            text-decoration: underline;
+        }
+        
+        input[type="text"]:focus {
+            background: grey;
+            color: white;
+        }
+        input[type="email"]:focus {
+            background: grey;
+            color: white;
+        }
 
-        <aside>
-            <div id="left-aside-container">
-                <h3>주요 뉴스</h3>
+        #woman {
+            accent-color:red;
+        }
+        #woman:checked + label {
+            color:red;
+        }
 
-                <img src="https://news.kbs.co.kr/data/news/2024/03/23/20240323_YTTFFO.jpg" alt="news" id="side-image">
-                <p id="image-header">전국의대교수비대위 “25일 사직서 재확인…주52시간 축소 지지”</p>
-            </div>
-        </aside>
+        #header > h1 { color: red; }
+        #section > h1 { color: orange; }
+    </style>
+</head>
 
-        <section>
-            <article></article>
+<body>
+    <h1>Hello World</h1>
+    <hr><br>
+    <p><b>Lorem ipsum dolor sit amet</b></p>
+    <p><i>Lorem ipsum dolor sit amet</i></p>
+    <p><small>Lorem ipsum dolor sit amet</small></p>
+    <p>Lorem ipsum dolor<sub>sit amet</sub></p>
+    <p>Lorem ipsum dolor<sup>sit amet</sup></p>
+    <p><ins>Lorem ipsum dolor sit amet</ins></p>
+    <p><del>Lorem ipsum dolor sit amet</del></p>
+    
+    <hr><br>
 
-        </section>
+    <table border="1">
+        <tr>
+            <th colspan="2">지역별 홍차</th>
+        </tr>
+        <tr>
+            <th rowspan="3">중국</th>
+            <td>정산소종</td>
+        </tr>
+        <tr><td>기문</td></tr>
+        <tr><td>운남</td></tr>
+        <tr>
+            <th rowspan="4">인도 및 스리랑카</th>
+            <td>아삼</td>
+        </tr>
+        <tr><td>실론</td></tr>
+        <tr><td>다질링</td></tr>
+        <tr><td>닐기리</td></tr>
+    </table>
+    
+    <hr><br>
+    
+    <img src="https://health.chosun.com/site/data/img_dir/2023/06/20/2023062002262_0.jpg" alt="사과" width = 200>
+    
+    <hr><br>
 
-        <aside></aside>
+    <form>
+        <form>
+            <fieldset>
+                <legend>입력 양식</legend>
+                <table>
+                    <tr>
+                        <td><label for="name">이름</label></td>
+                        <td><input id="name" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="mail">이메일</label></td>
+                        <td><input id="mail" type="email"></td>
+                    </tr>
+                </table>
+                <input type="submit">
+            </fieldset>
+        </form>
+        <br>
 
-        <footer></footer>
+        <label> 성별</label>
+        <input type="radio" id="man" name="gender" value="m">
+        <label for="man"> 남자</label>
+        <input type="radio" id="woman" name="gender" value="w">
+        <label for="woman"> 여자</label>
 
-    </body>
+        <br>
+        <select>
+            <optgroup label="HTML5">
+                <option>Multimedia Tag</option>
+                <option>Connectivity</option>
+                <option>Device Access</option>
+            </optgroup>
+                <optgroup label="CSS3">
+                <option>Animation</option>
+                <option>3D Transform</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <hr><br>
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    
+    
+</body>
+
 </html>
