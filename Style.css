@@ -1,3 +1,8 @@
+h3 {
+    text-align: center;
+    color: white;
+}
+
 /* URL styling */
 nav a {
     color : white;
@@ -11,13 +16,13 @@ nav a:hover {
 #header-container {
     text-align: center;
     font-size: 30px;
-    color : #d32e2e;
+    color : #96bcff;
     vertical-align: middle;
     margin: 10px 0px 15px 0px;
 }
 
 #search {
-    border: 2px solid #d32e2e;
+    border: 2px solid #96bcff;
     border-radius: 8px; /* 테두리 둥굴게 설정 */
     width: 30%;
     padding: 3px 0px 3px 0px;
@@ -26,14 +31,33 @@ nav a:hover {
 
 #nav-container {
     width: 100%;
-    background-color: #d32e2e;
+    background-color: #96bcff;
     text-align: center;
     vertical-align: middle;
     padding: 2px 0px 2px 0px;
+    border-radius: 10px;
 }
 
 #navigator {
     color: white;
-    margin: 0px 7px 0px 7px;
-    
+    margin: 0px 7px 0px 7px;   
+}
+
+#side-image {
+    width: 40%
+}
+
+#left-aside-container {
+    width: 35%;
+    background-color: #96bcff;
+    border-radius: 10px;
+}
+
+#side-image {
+    float: left;
+    margin: 3px 10px 3px 10px;
+}
+
+#image-header {
+    font-size: 10px;
 }
