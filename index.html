@@ -2,144 +2,117 @@
 <html>
 
 <head>
-    <title>HTML5 Basic</title>
-
-    <script>
-        alert('Hello JavaScript...!');
-     </script>
+    <title>Float example</title>
 
     <style>
         #float_example {
             border: 1pt solid black;
-            background-color: grey;
-            margin: 5px 10px 0px 0px;
+            background-color: rgba(229, 235, 145, 0.323);
+            margin: 0px 10px 10px 5px;
             padding: 5px;
             float: left;
             position: relative;
             top: 10px;
         }
-        body > h1:hover {
-            color : red;
+
+        #british_museum {
+            float: left;
+            position: relative;
         }
-        body > h1:active {
-            text-decoration: underline;
-        }
-        
-        input[type="text"]:focus {
-            background: grey;
+        #british_caption {
+            position: relative;
+            top: -25px;
             color: white;
+            text-align: center;
+            background-color: rgba(162, 160, 127, 0.763);
         }
-        input[type="email"]:focus {
-            background: grey;
-            color: white;
+        .popup {
+            padding: 10px;
+            position: absolute;
+            background-color: yellowgreen;
+            box-shadow: 0 0 15px black;
+            display: none;
+        }
+        figure.thumbnail:hover figcaption.popup {
+            position: absolute;
+            top: 0px;
+            left: 320px;
+            display: block;
         }
 
-        #woman {
-            accent-color:red;
+        .flex_container {
+            background-color: #5ec3e4;
+            width: 600px;
+            margin: 50px;
+            display: flex;
+            flex-wrap: wrap;
         }
-        #woman:checked + label {
-            color:red;
+        .flex_container div {
+            background-color: #b1dae9;
+            margin: 5px;
+            flex: 1 1 150px;
+        }
+        .grid_container {
+            background-color: #5ec3e4;
+            width: 600px;
+            margin: 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid_container div {
+            background-color: #b1dae9;
+            margin: 5px;
+            flex: 1 1 150px;
         }
 
-        #header > h1 { color: red; }
-        #section > h1 { color: orange; }
     </style>
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <h1>실습</h1>
     <hr><br>
+
+    <h2>Float Example</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sagittis, lorem vitae fermentum viverra, massa lacus convallis sapien, in congue risus neque scelerisque erat. Phasellus ac consequat lectus. Ut purus nunc, volutpat et sem sit amet, eleifend rutrum orci. Pellentesque mauris dui, viverra a malesuada sed, varius nec mi. Suspendisse ac commodo ligula, nec efficitur augue. Vivamus venenatis semper imperdiet. Proin tempus magna quis lectus egestas sagittis. Nulla iaculis dolor maximus velit lacinia, vel aliquet lorem hendrerit. Aliquam erat volutpat. In rhoncus placerat nisi vel scelerisque.</p>
+
     <figure id="float_example">
         <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg" width=" 300">
         <figcaption>image</figcaption>
     </figure>
-    <p><b>Lorem ipsum dolor sit amet</b></p>
-    <p><i>Lorem ipsum dolor sit amet</i></p>
-    <p><small>Lorem ipsum dolor sit amet</small></p>
-    <p>Lorem ipsum dolor<sub>sit amet</sub></p>
-    <p>Lorem ipsum dolor<sup>sit amet</sup></p>
-    <p><ins>Lorem ipsum dolor sit amet</ins></p>
-    <p><del>Lorem ipsum dolor sit amet</del></p>
-    
-    <hr><br>
 
-    <table border="1">
-        <tr>
-            <th colspan="2">지역별 홍차</th>
-        </tr>
-        <tr>
-            <th rowspan="3">중국</th>
-            <td>정산소종</td>
-        </tr>
-        <tr><td>기문</td></tr>
-        <tr><td>운남</td></tr>
-        <tr>
-            <th rowspan="4">인도 및 스리랑카</th>
-            <td>아삼</td>
-        </tr>
-        <tr><td>실론</td></tr>
-        <tr><td>다질링</td></tr>
-        <tr><td>닐기리</td></tr>
-    </table>
-    
-    <hr><br>
-    
-    <img src="https://health.chosun.com/site/data/img_dir/2023/06/20/2023062002262_0.jpg" alt="사과" width = 200>
-    
-    <hr><br>
+    <p>Morbi euismod risus odio, sed aliquet odio rhoncus ornare. Phasellus laoreet felis ut mi pharetra rutrum. Donec interdum dolor ac mauris suscipit, ut fringilla nulla iaculis. Donec commodo lorem sit amet nulla dapibus, nec vestibulum lectus luctus. Etiam mollis turpis diam, ac tristique felis tincidunt nec. Duis faucibus luctus tellus, dignissim vulputate quam auctor feugiat. Fusce iaculis molestie nulla, tincidunt bibendum nisl. Quisque et nisi tortor. Quisque id est elementum, iaculis nisi sed, lobortis quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec fringilla nibh ut facilisis pretium.</p>
+    <hr>
 
-    <form>
-        <form>
-            <fieldset>
-                <legend>입력 양식</legend>
-                <table>
-                    <tr>
-                        <td><label for="name">이름</label></td>
-                        <td><input id="name" type="text"></td>
-                    </tr>
-                    <tr>
-                        <td><label for="mail">이메일</label></td>
-                        <td><input id="mail" type="email"></td>
-                    </tr>
-                </table>
-                <input type="submit">
-            </fieldset>
-        </form>
-        <br>
+    <h2>Image Thumbnail</h2>
+    <figure id="british_museum" class="thumbnail">
+        <img src="https://eu-assets.simpleview-europe.com/greatwestway/imageresizer/?image=%2Fdmsimgs%2FB7FEDEF62D32F7FDAE9702A7FF6AFBACDFBB7141.jpg&action=ProductDetailProFullWidth" width="300">
+        <figcaption id="british_caption">British Museum</figcaption>
+        <figcaption class="popup">
+            <img src="https://eu-assets.simpleview-europe.com/greatwestway/imageresizer/?image=%2Fdmsimgs%2FB7FEDEF62D32F7FDAE9702A7FF6AFBACDFBB7141.jpg&action=ProductDetailProFullWidth" width="200">
+            <p>caption</p>
+        </figcaption>
+    </figure>
+    <br><br><br><br><br><br><br><br><br><br><br><hr>
 
-        <label> 성별</label>
-        <input type="radio" id="man" name="gender" value="m">
-        <label for="man"> 남자</label>
-        <input type="radio" id="woman" name="gender" value="w">
-        <label for="woman"> 여자</label>
-
-        <br>
-        <select>
-            <optgroup label="HTML5">
-                <option>Multimedia Tag</option>
-                <option>Connectivity</option>
-                <option>Device Access</option>
-            </optgroup>
-                <optgroup label="CSS3">
-                <option>Animation</option>
-                <option>3D Transform</option>
-            </optgroup>
-        </select>
-    </form>
-
-    <hr><br>
-    <div id="header">
-        <h1 class="title">Lorem ipsum</h1>
-        <div id="nav">
-            <h1>Navigation</h1>
-        </div>
+    <h2>Flex Container</h2>
+    <div class="flex_container">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
     </div>
-    <div id="section">
-        <h1 class="title">Lorem ipsum</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    <h2> Grid Container</h2>
+    <div class="grid_container">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
     </div>
-    
-    
+
+
 </body>
 
 </html>
