@@ -4,6 +4,7 @@
 <head>
     <title>Float example</title>
 
+
     <style>
         #float_example {
             border: 1pt solid black;
@@ -160,23 +161,48 @@
     <br><hr>
 
     <h2>Keyboard</h2>
-    <div class="keyboard row1">
-        <div>Esc</div><div>~</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>0</div><div>-</div><div>=</div><div class="long_key">&lt;-</div>
-    </div>
-    <div class="keyboard row2">
-        <div class="long_key">Tab</div><div>q</div><div>w</div><div>e</div><div>r</div><div>t</div><div>y</div><div>u</div><div>i</div><div>o</div><div>p</div><div>[</div><div>]</div><div>\</div><div>Del</div>
-    </div>
-    <div class="keyboard row3">
-        <div class="longer_key">Caps</div><div>a</div><div>s</div><div>d</div><div>f</div><div>g</div><div>h</div><div>j</div><div>k</div><div>l</div><div>;</div><div>'</div><div class="longerr_key">Enter</div>
-    </div>
-    <div class="keyboard row4">
-        <div class="longerr_key">Shift</div><div>z</div><div>x</div><div>c</div><div>v</div><div>b</div><div>n</div><div>m</div><div>,</div><div>.</div><div>/</div><div>^</div><div class="longer_key">Shift</div>
-    </div>
-    <div class="keyboard row5">
-        <div>Fun</div><div>Ctrl</div><div>Win</div><div>Alt</div><div class="long_key">한자</div><div class="longerrr_key"></div><div class="long_key">한/영</div><div>Alt</div><div>&lt;</div><div>v</div><div>&gt;</div><div>ㅁ</div>
+    <div class="keyboard_container">
+        <div class="keyboard row1">
+            <div>Esc</div><div>~</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>0</div><div>-</div><div>=</div><div class="long_key">&lt;-</div>
+        </div>
+        <div class="keyboard row2" onclick="myFunction();">
+            <div class="long_key">Tab</div><div id="key">q</div><div>w</div><div>e</div><div>r</div><div>t</div><div>y</div><div>u</div><div>i</div><div>o</div><div>p</div><div>[</div><div>]</div><div>\</div><div>Del</div>
+        </div>
+        <div class="keyboard row3">
+            <div class="longer_key">Caps</div><div>a</div><div>s</div><div>d</div><div>f</div><div>g</div><div>h</div><div>j</div><div>k</div><div>l</div><div>;</div><div>'</div><div class="longerr_key">Enter</div>
+        </div>
+        <div class="keyboard row4">
+            <div class="longerr_key">Shift</div><div>z</div><div>x</div><div>c</div><div>v</div><div>b</div><div>n</div><div>m</div><div>,</div><div>.</div><div>/</div><div>^</div><div class="longer_key">Shift</div>
+        </div>
+        <div class="keyboard row5">
+            <div>Fun</div><div>Ctrl</div><div>Win</div><div>Alt</div><div class="long_key">한자</div><div class="longerrr_key"></div><div class="long_key">한/영</div><div>Alt</div><div>&lt;</div><div>v</div><div>&gt;</div><div>ㅁ</div>
+        </div>
     </div>
 
+    <input id="text_input" type="text"></input>
 
+    
+    <script>
+        const keys = document.querySelectorAll(".keyboard_container div div");
+        const text = document.getElementById("text_input");
+        for(const a of keys) {
+            a.addEventListener("click", function() {
+                text.value += a.textContent;
+            })
+        
+            window.addEventListener("keydown", function(e) {
+                if(e.key === a.textContent) {
+                    a.style.backgroundColor = "white";
+                    a.style.color = "black";
+                    setTimeout(function() {
+                        a.style.backgroundColor = "grey";
+                        a.style.color = "white"
+                    }, 100);
+                    a.click();
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
