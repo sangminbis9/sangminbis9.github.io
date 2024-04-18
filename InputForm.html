@@ -5,37 +5,43 @@
 <head>
     <style>
         #form {
-            background-color : rgb(233, 231, 231);
+            background-color: rgb(233, 231, 231);
             border-radius: 10px;
             width: 50%;
             margin: 0 auto;
         }
+
         h1 {
             text-align: center;
             padding-top: 30px;
         }
+
         #inputForms {
             text-align: center;
             margin: 10px;
         }
+
         input[type=text] {
             border: 1px solid rgb(193, 191, 191);
             border-radius: 5px;
             width: 70%;
             padding: 10px 5px 10px 5px;
         }
+
         input[type=password] {
             border: 1px solid rgb(193, 191, 191);
             border-radius: 5px;
             width: 70%;
             padding: 10px 5px 10px 5px;
         }
+
         select[name="payment"] {
             border: 1px solid rgb(193, 191, 191);
             border-radius: 5px;
             width: 70%;
             padding: 10px 5px 10px 5px;
         }
+
         button[type="submit"] {
             width: 70%;
             border: 1px solid rgb(193, 191, 191);
@@ -44,11 +50,12 @@
             color: white;
             padding: 10px 5px 10px 5px;
         }
+
         button[type="submit"]:hover {
             color: grey;
             border: 1px solid grey;
-            background-color:rgb(110, 202, 238);
-            
+            background-color: rgb(110, 202, 238);
+
         }
     </style>
 </head>
@@ -91,7 +98,7 @@
             </div>
 
             <div id="inputForms">
-                <button type="submit"> Register </button>
+                <button type="submit" id="submit"> Register </button>
             </div>
 
             <br>
@@ -151,6 +158,23 @@
             opt.value = optionValue;
             select.appendChild(opt);
         }
+
+        // check if field is empty
+        const form = document.querySelector("#loginForm");
+        form.addEventListener("submit", (e) => {
+            const fieldValue = document.querySelector("#username").value;
+            if (fieldValue == null || fieldValue == "") {
+                // the field was empty. Stop form submission
+                e.preventDefault();
+                // Now tell the user something went wrong
+                console.log("you must enter a username");
+            }
+        });
+
+        document.getElementById('submit').onclick = function () {
+            const formExample = document.getElementById("loginForm");
+            formExample.submit();
+        };
     </script>
 
 </body>
