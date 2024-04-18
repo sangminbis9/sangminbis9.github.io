@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        #form {
+            background-color : rgb(233, 231, 231);
+            border-radius: 10px;
+            width: 50%;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            padding-top: 30px;
+        }
+        #inputForms {
+            text-align: center;
+            margin: 10px;
+        }
+        input[type=text] {
+            border: 1px solid rgb(193, 191, 191);
+            border-radius: 5px;
+            width: 70%;
+            padding: 10px 5px 10px 5px;
+        }
+        input[type=password] {
+            border: 1px solid rgb(193, 191, 191);
+            border-radius: 5px;
+            width: 70%;
+            padding: 10px 5px 10px 5px;
+        }
+        select[name="payment"] {
+            border: 1px solid rgb(193, 191, 191);
+            border-radius: 5px;
+            width: 70%;
+            padding: 10px 5px 10px 5px;
+        }
+        button[type="submit"] {
+            width: 70%;
+            border: 1px solid rgb(193, 191, 191);
+            border-radius: 5px;
+            background-color: skyblue;
+            color: white;
+            padding: 10px 5px 10px 5px;
+        }
+        button[type="submit"]:hover {
+            color: grey;
+            border: 1px solid grey;
+            background-color:rgb(110, 202, 238);
+            
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="form">
+
+        <h1>Registration</h1>
+        <hr><br>
+
+        <form method="post" action="login.php" id="loginForm">
+
+            <div id="inputForms">
+                <input type="text" name="username" id="username" placeholder="UserName" />
+            </div>
+
+            <div id="inputForms">
+                <input type="text" name="email" id="email" placeholder="Email" />
+            </div>
+
+            <div id="inputForms">
+                <input type="password" name="pass" id="pass" placeholder="Password" />
+            </div>
+
+            <div id="inputForms">
+                <input type="radio" name="region" id="europe" value="Europe" class="bigRadio"><span>Europe</span>
+
+                <input type="radio" name="region" id="usa" value="United States" class="bigRadio"><span>United
+                    States</span>
+            </div>
+
+            <div id="inputForms">
+                <select name="payment" id="payment"></select>
+            </div>
+
+            <div id="inputForms">
+                <label>Remeber Me</label>
+                <input type="checkbox" name="save" id="save" class="bigCheckBox" />
+            </div>
+
+            <div id="inputForms">
+                <button type="submit"> Register </button>
+            </div>
+
+            <br>
+
+        </form>
+    </div>
+
+    <div id="errors" class="hidden"></div>
+
+    <script>
+        function setBackground(e) {
+            if (e.type == "focus") {
+                e.target.style.backgroundColor = "#FFE393";
+            }
+            else if (e.type == "blur") {
+                e.target.style.backgroundColor = "white";
+            }
+        }
+
+        window.addEventListener("load", function () {
+            const cssSelector = "input[type=text], input[type=password]";
+            const fields = document.querySelectorAll(cssSelector);
+            for (let f of fields) {
+                f.addEventListener("focus", setBackground);
+                f.addEventListener("blur", setBackground);
+            }
+        });
+
+        const label = document.querySelector("#payLabel");
+        const select = document.querySelector("#payment");
+        select.disabled = true;
+        const radios = document.querySelectorAll("input[name=region]");
+
+        for (let i = 0; i < radios.length; i++) {
+            radios[i].addEventListener("change", function (e) {
+                select.disabled = false;
+                select.innerHTML = "";
+                addOption(select, "Select Payment Type", "0");
+
+                let choice = e.target.value;
+                if (choice == "United States") {
+                    addOption(select, "American Express", "1");
+                    addOption(select, "Mastercard", "2");
+                    addOption(select, "Visa", "3");
+                }
+                else if (choice == "Europe") {
+                    addOption(select, "Bitcoin", "4");
+                    addOption(select, "PayPal", "5");
+                }
+
+            });
+        }
+
+        function addOption(select, optionText, optionValue) {
+            let opt = document.createElement('option');
+            opt.appendChild(document.createTextNode(optionText));
+            opt.value = optionValue;
+            select.appendChild(opt);
+        }
+    </script>
+
+</body>
+
+</html>
