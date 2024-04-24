@@ -35,6 +35,21 @@
             padding: 10px 5px 10px 5px;
         }
 
+        input[type=number] {
+            border: 1px solid rgb(193, 191, 191);
+            border-radius: 5px;
+            width: 19%;
+            padding: 10px 5px 10px 5px;
+        }
+
+        select[type=number] {
+            border: 1px solid rgb(193, 191, 191);
+            border-radius: 5px;
+            width: 24%;
+            padding: 10px 5px 10px 5px;
+            text-align: center;
+        }
+
         select[name="payment"] {
             border: 1px solid rgb(193, 191, 191);
             border-radius: 5px;
@@ -82,10 +97,50 @@
             </div>
 
             <div id="inputForms">
-                <input type="radio" name="region" id="europe" value="Europe" class="bigRadio"><span>Europe</span>
+                <select type="number">
+                    <option value="010">010</option>
+                    <option value="032">032</option>
+                    <option value="02">02</option>
+                </select>
+                <input type="number" name="pass" id="number1" maxlength="4" />
+                <input type="number" name="pass" id="number2" maxlength="4" />
 
-                <input type="radio" name="region" id="usa" value="United States" class="bigRadio"><span>United
-                    States</span>
+                <script>
+                    // 이벤트를 연결합니다.
+                    window.onload = function () {
+                        // 문서 객체를 선택합니다.
+                        let input_1 = document.getElementById("number1");
+                        let input_2 = document.getElementById("number2");
+                        // input_1
+                        input_1.onkeydown = function () {
+                            // 글자 개수가 6개 이상일 때
+                            if (4 <= input_1.value.length) {
+                                // input_2 문서 객체로 포커스를 이동합니다.
+                                input_2.focus();
+                            }
+                        };
+                        // input_2
+                        input_2.onkeydown = function (event) {
+                            // 이벤트 객체를 추출합니다.
+                            event = event || window.event;
+                            // 사용자의 입력이 '백 스페이스'이고 입력된 글자가 없을 때
+                            if (event.keyCode == 8 && input_2.value.length == 0) {
+                                input_1.focus();
+                            }
+                            if (4 <= input_2.value.length) {
+                                // input_2 문서 객체로 포커스를 이동합니다.
+                                input_2.blur();
+                            }
+                        };
+                    };
+                </script>
+            </div>
+
+            <div id="inputForms">
+                <input type="radio" name="region" id="europe" value="Europe" class="bigRadio"><label for="europe">Europe</label>
+
+                <input type="radio" name="region" id="usa" value="United States" class="bigRadio"><label for="usa">United
+                    States</label>
             </div>
 
             <div id="inputForms">
@@ -93,7 +148,7 @@
             </div>
 
             <div id="inputForms">
-                <label>Remeber Me</label>
+                <label for="save">Remeber Me</label>
                 <input type="checkbox" name="save" id="save" class="bigCheckBox" />
             </div>
 
