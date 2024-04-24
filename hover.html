@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        #image {
+            width: 10%;
+        }
+        #image_popup {
+            width: 100%;
+        }
+
+        figcaption.popup {
+            padding: 10px;
+            background: rgb(226, 226, 226);
+            display: none;
+            position: absolute;
+            box-shadow: 0 0 15px grey;
+            width: 200px;
+            text-align: center;
+        }
+
+        figure.thumbnail:hover figcaption.popup {
+            position: absolute;
+            top: 0;
+            left: 150px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <figure class="thumbnail">
+        <img id="image" src="https://i.namu.wiki/i/UGQtkJpRHjmtGABCoZYRgS8cB8aTSXq-eQVravCscfUC5ELCXfmVdomlez6i1E_yaHT9DiLprSp5HyJyIXsJVA.webp" alt="image">
+        <figcaption class="popup">
+            <img id="image_popup" src="https://i.namu.wiki/i/UGQtkJpRHjmtGABCoZYRgS8cB8aTSXq-eQVravCscfUC5ELCXfmVdomlez6i1E_yaHT9DiLprSp5HyJyIXsJVA.webp" alt="image popup">
+            <p>곰돌이 푸</p>
+        </figcaption>
+    </figure>
+    
+</body>
+</html>
