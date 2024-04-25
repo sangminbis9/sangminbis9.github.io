@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .container {
+            display: grid;
+            gap: 1px;
+            width: 50%;
+            grid-template-columns: repeat(4, fr);
+            grid-template-rows: repeat(4, fr);
+            background-color: grey;
+
+            margin: auto;
+            margin-top: 100px;
+        }
+        .container div {
+            background-color: white;
+            text-align: center;
+        }
+        #grey {
+            background-color: rgb(226, 226, 226);
+        }
+        .column12 {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .column15 {
+            grid-column-start: 1;
+            grid-column-end: 5;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .column25 {
+            grid-column-start: 2;
+            grid-column-end: 5;
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .column1 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            text-align: right;
+        }
+
+        .column2 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            text-align: center;
+        }
+        .column3 {
+            grid-column-start: 3;
+            grid-column-end: 4;
+            text-align: center;
+        }
+        .column4 {
+            grid-column-start: 4;
+            grid-column-end: 5;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>인하대 컴퓨터공학과 졸업요구조건</h1>
+
+    <div class="container">
+        <div class="column15" id="grey" style="font-size: 20pt;">졸업요구조건</div>
+
+        <div class="column1"id="grey" ></div>
+        <div class="column2"id="grey" >졸업요구학점</div>
+        <div class="column3"id="grey" >전공</div>
+        <div class="column4"id="grey" >잔여학점</div>
+
+        <div class="column1">단일전공</div>
+        <div class="column2">130</div>
+        <div class="column3">65</div>
+        <div class="column4">65</div>
+
+        <div class="column1">다중전공</div>
+        <div class="column2">130</div>
+        <div class="column3">39</div>
+        <div class="column4">91</div>
+
+        <div class="column1">비고</div>
+        <div class="column25">* 졸업학기에는 졸업고사를 응시해야 함. (졸업고사대체요건 : 전공성적3.3이상 성적표 제출 or 정보처리기사 사본 제출or 논문 작성 제 1저자로 참여한 논문-게재확인서 또는 논문 첫장 및 개요 or Topcit 270점 이상 성적표 제출 or i-pac 인증서 B등급 이상 증빙서류 제출) 졸업 총이수 학점 : 130학점 졸업 전공이수 학점(09~15학번) : 60학점 졸업 전공이수 학점(16학번부터 ) : 65학점</div>
+
+        <div class="column15"id="grey"  style="font-size: 20pt;">제2전공 졸업요구조건</div>
+
+        <div class="column1"id="grey" ></div>
+        <div class="column2"id="grey" >전공</div>
+        <div class="column3"id="grey" >교직</div>
+        <div class="column4"id="grey" >유사인정</div>
+
+        <div class="column1">복수전공</div>
+        <div class="column2">39</div>
+        <div class="column3">0</div>
+        <div class="column4">0</div>
+
+        <div class="column1">비고</div>
+        <div class="column25">전공필수 3과목(객체지향프로그래밍1,2/자료구조)을 포함하여 17학년도 이전 신입생은 42학점 이상, 18학년도 이후 신입생은 39학점이상 이수해야 함.</div>
+
+        <div class="column1">부전공</div>
+        <div class="column2">21</div>
+        <div class="column3">0</div>
+        <div class="column4">0</div>
+
+        <div class="column1">비고</div>
+        <div class="column25">전공필수 3과목(객체지향프로그래밍1,2/자료구조)을 포함하여 21학점 이상 이수해야 함.</div>
+
+    </div>
+
+</body>
+
+</html>
