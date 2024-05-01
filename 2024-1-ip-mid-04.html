@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello</title>
+
+
+    <style>
+        .container {
+            display: grid;
+            gap: 1px;
+            width: 100%;
+            grid-template-columns: 20%, 80%;
+            grid-template-rows: repeat(4, fr);
+
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .container div {
+            background-color: white;
+        }
+        #border1 {
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+            border-bottom: 2px solid black;
+            place-items: center;
+        }
+        #border2 {
+            border-top: 2px solid black;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            place-items: center;
+        }
+
+        .column1 {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+
+        .column2 {
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+
+        .n {
+            overflow: hidden;
+        }
+
+        .a {
+            list-style: none;
+            float: left;
+            padding: 15px;
+            color: white;
+        }
+
+        .a:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+
+        .a:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .a:nth-child(2n) {
+            background-color: #FF0003;
+        }
+
+        .a:nth-child(2n+1) {
+            background-color: #800000;
+        }
+
+        #grey {
+            background-color: grey;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--header-->
+    <div class="container">
+            <div class="column1" id="border1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Inha_University_logotype.png">
+            </div>
+            <div class="column2" id="border2">
+                <ul class="n">
+                    <li class="a">교육</li>
+                    <li class="a">입학/취업</li>
+                    <li class="a">신학/연구</li>
+                    <li class="a">학사</li>
+                    <li class="a">대학생활</li>
+                    <li class="a">인하소식</li>
+                    <li class="a">인하소개</li>
+                </ul>
+            </div>
+
+        <div class="column1" id="grey">
+            <ul>
+                <li>뉴스</li>
+                <li>소식</li>
+                <li>연구</li>
+                <li>서비스</li>
+                <li>SNS</li>
+            </ul>
+        </div>
+        <div class="column2">
+            <h2>창학이념과 교육목표</h1>
+            <h3>인격도야, 진리탐구, 사회봉사</h2>
+            <p>우리 대학교는 1954년 조국부강, 민족번영의 염원으로 개교하여 창의, 근면, 봉사의 창학정신을 구현하기 위한 인격도야, 진리탐구, 사회봉사의 3대교육 이념을 포방하고 있다.</p>
+            <p>이는 교훈 「眞」과 함께 연구하는 대학으로서의 참된 인간 수련을 통하여 국가와 인류사회 발전에 공헌하려는 의욕적 자세와 세계로 웅비하는 발전 「仁荷」의 의지 및 진리 탐구를 위한 학문에의
+                열정을 집약한 것이다. 위의 이념을 기초로 우리 대학은 인격을 도야하고, 건전한 사상을 함양하는 동시에 심오한 학술이론과 그 응용방법을 연구, 교수하여 국가와 인류사회발전에 공헌할 수
+                있는 지도적 인재양성을 교육목적으로 두고 있다.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
