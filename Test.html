@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+    </style>    
+</head>
+
+<body>
+    <h2>상품 등록하기</h2>
+    <h3>상품 정보를 입력해주세요</h3>
+    <form action="check.php" method="post">
+        <table>
+            <tr>
+                <td>상품명</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>상품 이미지</td>
+                <td><input type="file" accept="image/*" name="image"></td>
+            </tr>
+            <tr>
+                <td>카테고리</td>
+                <td><input type="text" name="category"></td>
+            </tr>
+            <tr>
+                <td>색상</td>
+                <td><input type="text" name="color"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td><input type="text" name="gender"></td>
+            </tr>
+        </table>
+
+        <input type="submit" value="상품 등록">
+        <input type="reset" value="초기화">
+    </form>
+
+</body>
+
+</html>
